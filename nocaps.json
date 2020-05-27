@@ -1,0 +1,43 @@
+{
+  "title": "C2C Options",
+  "rules": [{
+    "description": "c2c without iterm and oni",
+    "manipulators": [{
+      "type": "basic",
+      "from": {
+        "key_code": "left_control",
+        "modifiers": {
+          "optional": [ "any" ]
+        }
+      },
+      "to": [ {
+        "key_code": "left_command"
+      } ],
+      "conditions": [ {
+        "type": "frontmost_application_unless",
+        "bundle_identifiers": [ "^com\\.googlecode\\.iterm2" ]
+      },{
+        "type": "frontmost_application_unless",
+        "bundle_identifiers": [ "^com\\.extropy\\.oni" ]
+      } ]
+    },{
+      "type": "basic",
+      "from": {
+        "key_code": "left_command",
+        "modifiers": {
+          "optional": [ "any" ]
+        }
+      },
+      "to": [ {
+        "key_code": "left_control"
+      } ],
+      "conditions": [ {
+        "type": "frontmost_application_unless",
+        "bundle_identifiers": [ "^com\\.googlecode\\.iterm2" ]
+      },{
+        "type": "frontmost_application_unless",
+        "bundle_identifiers": [ "^com\\.extropy\\.oni" ]
+      } ]
+    }]
+  }]
+}
