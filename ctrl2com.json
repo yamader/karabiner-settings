@@ -1,8 +1,8 @@
 {
-  "title": "Ctrl to Command",
+  "title": "ctrl to com",
   "rules": [
     {
-      "description": "Ctrl to Command without Apple Terminal",
+      "description": "ctrl to com not on terminal",
       "manipulators": [
         {
           "type": "basic",
@@ -23,7 +23,8 @@
             {
               "type": "frontmost_application_unless",
               "bundle_identifiers": [
-                "^com\\.apple\\.terminal"
+                "^com\\.googlecode\\.iterm2$",
+                "^com\\.apple\\.Terminal$"
               ]
             }
           ]
@@ -47,7 +48,51 @@
             {
               "type": "frontmost_application_unless",
               "bundle_identifiers": [
-                "^com\\.apple\\.terminal"
+                "^com\\.googlecode\\.iterm2$",
+                "^com\\.apple\\.Terminal$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "com-tab to ctrl-tab",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "tab",
+            "modifiers": {
+              "mandatory": [
+                "left_command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "tab",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "tab",
+            "modifiers": {
+              "mandatory": [
+                "left_control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "tab",
+              "modifiers": [
+                "left_command"
               ]
             }
           ]

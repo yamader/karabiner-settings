@@ -1,8 +1,8 @@
 {
-  "title": "Space and Shift",
+  "title": "SandS",
   "rules": [
     {
-      "description": "Enable the SandS",
+      "description": "SandS",
       "manipulators": [
         {
           "type": "basic",
@@ -22,6 +22,14 @@
           "to_if_alone": [
             {
               "key_code": "spacebar"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^io\\.krunker\\.desktop$"
+              ]
             }
           ]
         }
